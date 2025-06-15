@@ -1,0 +1,38 @@
+{
+  "name": "tech-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ./wwwroot",
+    "build": "vite build",
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "wechooz",
+  "license": "MIT",
+  "dependencies": {
+    "@mantine/core": "8.3.13",
+    "@mantine/hooks": "8.3.13",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.10",
+    "@types/react": "19.2.9",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.2",
+    "fs": "0.0.1-security",
+    "path": "0.12.7",
+    "rimraf": "6.1.2",
+    "sass-embedded": "1.97.3",
+    "typescript": "5.9.3",
+    "url": "0.11.4",
+    "vite": "7.3.1",
+    "vite-tsconfig-paths": "6.0.5"
+  },
+  "volta": {
+    "node": "25.4.0"
+  }
+}
