@@ -17,9 +17,12 @@ public class PerformLoginEndpoint : Ardalis.ApiEndpoints.EndpointBaseAsync.WithR
         }
         if (request.Login == "formation" || request.Login == "sales")
         {
-            var principal = new ClaimsPrincipal([new ClaimsIdentity([new Claim(ClaimTypes.Role, request.Login), new Claim(ClaimTypes.Name, request.Login)])]);
-            await HttpContext.SignInAsync(principal);
-            return Ok(principal.Claims);
+            var identity = new ClaimsIdentity(
+                new[] { new Claim(ClaimTypes.Role, request.Login), new Claim(ClaimTypes.Name, request.Login) },
+                "Cookies");
+            var principal = new ClaimsPrincipal(identity);
+            await HttpContext.SignInAsync("Cookies", principal);
+            return Ok(new { login = request.Login });
         }
         return Unauthorized();
     }
