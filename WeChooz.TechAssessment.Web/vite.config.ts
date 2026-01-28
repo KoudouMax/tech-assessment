@@ -81,6 +81,7 @@ export default defineConfig(async () => {
                 input: {
                     index: path.resolve(__dirname, "ClientApp", "src", "public", "index.tsx"),
                     admin: path.resolve(__dirname, "ClientApp", "src", "admin", "index.tsx"),
+                    authLogin: path.resolve(__dirname, "ClientApp", "src", "auth", "login", "index.tsx"),
                 },
                 output: {
                     // Save entry files to the appropriate folder

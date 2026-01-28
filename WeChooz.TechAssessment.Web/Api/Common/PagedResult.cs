@@ -1,0 +1,7 @@
+namespace WeChooz.TechAssessment.Web.Api.Common;
+
+public sealed record PagedResult<T>(
+    IReadOnlyList<T> Items,
+    int TotalCount,
+    int Page,
+    int PageSize);

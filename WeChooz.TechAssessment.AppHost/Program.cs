@@ -19,6 +19,7 @@ builder.AddProject<Projects.WeChooz_TechAssessment_Web>("webfrontend")
     .AddNpmRestore()
     .WithExternalHttpEndpoints()
     .WithReference(cache).WaitFor(cache)
+    .WithReference(formationDb).WaitFor(formationDb)
     ;
 
 builder.Build().Run();
