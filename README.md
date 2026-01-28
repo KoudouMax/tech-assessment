@@ -94,26 +94,3 @@ Le projet Aspire définit les ressources suivantes :
 - un serveur Redis (lancé via un container), ainsi qu'un side container exécutant Redis Insight,
 
 Le lancement du projet va donc créer les ressources nécessaires à l'exception de la mise à jour du schéma de base de données qui doit être fait manuellement en publiant le projet `WeChooz.TechAssessment.Database.SqlServer`. Le 1er lancement peut prendre un peu de temps, le temps que les containers soient créés et démarrés.
-
-## Base de données & migrations
-
-La source de vérité du schéma est le projet SSDT `WeChooz.TechAssessment.Database.SqlServer`.
-Les changements se font dans les fichiers SQL (`Tables/`, `Indexes/`, etc.) puis via publication SSDT.
-
-Le modèle EF Core côté `WeChooz.TechAssessment.Web` sert uniquement au mapping et à l'accès aux données :
-il n'y a pas de migrations EF Core dans ce projet.
-
-## API (raccourci)
-
-### Admin
-- `POST /_api/admin/login` (login: `formation` ou `sales`)
-- `GET/POST /_api/admin/courses`
-- `GET/PUT/DELETE /_api/admin/courses/{id}`
-- `GET/POST /_api/admin/sessions`
-- `GET/PUT/DELETE /_api/admin/sessions/{id}`
-- `GET/POST /_api/admin/sessions/{sessionId}/participants`
-- `DELETE /_api/admin/sessions/{sessionId}/participants/{participantId}`
-
-### Public
-- `GET /_api/public/sessions` (filtres: `targetAudience`, `deliveryMode`, `startDateFrom`, `startDateTo`)
-- `GET /_api/public/sessions/{id}`
